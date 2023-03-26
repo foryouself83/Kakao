@@ -1,0 +1,39 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:views="clr-namespace:Kakao.Main.UI.Views"
+    xmlns:james="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
+    xmlns:units="clr-namespace:Kakao.Main.UI.Units"
+    xmlns:names="clr-namespace:Kakao.Core.Names;assembly=Kakao.Core">
+
+    <Style TargetType="{x:Type views:MainContent}">
+        <Setter Property="Background" Value="Yellow"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type views:MainContent}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <james:JamesGrid Rows="*, Auto"
+                                         Columns="Auto, *">
+
+                            <StackPanel>
+                                <units:VerticalMenuList ItemsSource="{Binding Menus}"
+                                                        SelectedItem="{Binding Menu}"/>
+
+                                <Button Content="Logout"
+                                    Margin="10"
+                                    Padding="10 5 10 5"
+                                    HorizontalAlignment="Left"
+                                    Command="{Binding LogoutCommand}"/>
+                            </StackPanel>
+
+                            <james:JamesRegion RegionName="{x:Static names:RegiontNamesManger.ContentRegion}"/>
+                        </james:JamesGrid>
+                        
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

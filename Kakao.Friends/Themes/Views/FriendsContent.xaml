@@ -1,0 +1,41 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:views="clr-namespace:Kakao.Friends.UI.Views"
+    xmlns:birth="clr-namespace:Kakao.Friends.Birth.UI.Units;assembly=Kakao.Friends.Birth"
+    xmlns:favorite="clr-namespace:Kakao.Friends.Favorites.UI.Units;assembly=Kakao.Friends.Favorites">
+
+    <Style TargetType="{x:Type views:FriendsContent}">
+        <Setter Property="Background" Value="Yellow"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type views:FriendsContent}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <StackPanel>
+                            <TextBlock Text="Friends" FontSize="24"/>
+                            <birth:FriendsBirthBox Tag="Friends With Birthdays">
+                                <birth:BirthdayBoxItem/>
+                                <birth:BirthdayBoxItem/>
+                                <birth:BirthdayBoxItem/>
+                            </birth:FriendsBirthBox>
+                            
+                            <favorite:FavoriteBox Tag="Favorites">
+                                <favorite:FavoriteBoxItem>asdasdasd</favorite:FavoriteBoxItem>
+                                <favorite:FavoriteBoxItem>asdasdasd</favorite:FavoriteBoxItem>
+                                <favorite:FavoriteBoxItem>asdasdasd</favorite:FavoriteBoxItem>
+                            </favorite:FavoriteBox>
+                            
+                            <Button Content="Logout"
+                                    Margin="10"
+                                    Padding="10 5 10 5"
+                                    HorizontalAlignment="Left"
+                                    Command="{Binding LogoutCommand}"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

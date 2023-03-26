@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Jamesnet.Wpf" Version="1.0.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kakao.Chats\Kakao.Chats.csproj" />
+    <ProjectReference Include="..\Kakao.Core\Kakao.Core.csproj" />
+    <ProjectReference Include="..\Kakao.Forms\Kakao.Forms.csproj" />
+    <ProjectReference Include="..\Kakao.Friends\Kakao.Friends.csproj" />
+    <ProjectReference Include="..\Kakao.LayoutSupport\Kakao.LayoutSupport.csproj" />
+    <ProjectReference Include="..\Kakao.Login\Kakao.Login.csproj" />
+    <ProjectReference Include="..\Kakao.Main\Kakao.Main.csproj" />
+    <ProjectReference Include="..\Kakao.More\Kakao.More.csproj" />
+  </ItemGroup>
+
+</Project>

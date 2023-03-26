@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:james="clr-namespace:Jamesnet.Wpf.Controls;assembly=Jamesnet.Wpf"
+                    xmlns:units="clr-namespace:Kakao.LayoutSupport.UI.Units">
+
+    <Style TargetType="{x:Type units:FriendsBox}">
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type units:FriendsBox}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <james:JamesGrid Rows="auto, auto" Columns="*, auto">
+                            <TextBlock Text="{TemplateBinding Tag}"/>
+                            <CheckBox x:Name="expand" Content="Toggle"/>
+                            <ItemsPresenter x:Name="items" Grid.ColumnSpan="2"/>
+                        </james:JamesGrid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=expand, Path=IsChecked}" Value="True">
+                            <Setter TargetName="items" Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

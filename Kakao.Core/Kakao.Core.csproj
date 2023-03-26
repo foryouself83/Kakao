@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+
+	<!--	
+		WPF 관련 어셈블리
+	
+	windowsbase.dll					/ WPF UI 구성요소와 상호 작용하고 WPF UI구성요소를 만들고 구성
+									/ DispatcherObject, DependencyObject
+										
+	presentationFreamwork.dll		/ FrameworkElement
+										- WPF 프레임워크 수준 요소 클래스와 UIElement 서비스를 연결해 주는 지점.
+										- 레이아웃 시스템 정의 : 핵심 기능 손상 없이 새로운 레이아웃을 정의 가능.
+										- 논리적 트리 : markup을 이용해 구조를 표현할 때 이용.
+										- 객체 수명 이벤트 : Initialized, Loaded, Unloaded 세가지 지원.
+										- 데이터 바인딩 및 동적 리소스 참조 지원 : Expression으로 바인딩 -> Framework는 해석.
+										- 스타일 : 컨트롤의 외관을 변형하기 위해 사용.
+										- 에니메이션 지원
+									/ Control
+										- 탬플릿 지원 기능 : UI를 편리하게 수정 가능. 속성, 이벤트, Command, Template 기능 지원.
+										- XAML을 통한 탬플릿 정의 -> 랜더링 시 스트립트를 읽어 들여 반영
+										
+	presentationCore.dll			/ Visual
+										- 랜더링을 담당하는 객체. 컨트롤 클래스의 시작점. micore 컴포넌트와 밀접한 관련.
+										- WPF는 멀리 있는 객체를 먼저 그리고 가까이 있는 객체를 나중에 그린다.
+										- 주요 기능 : 출력 표시. 변환, 클리핑, 적중 테스트, 경계 상자 계산.
+										- 입출력, 이벤트 레이아웃 X
+									/ UIElement
+										- Layout, 입력 및 이벤트 등의 핵심 기능을 담당.
+										- Measure : 크기를 정의, Arrange : 위치와 정렬. (2단계 레이아웃)
+										- 입력과 Command의 분리 가능. -> CommandBinding으로 관리 가능.
+	  -->
+	  <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+</Project>
