@@ -12,13 +12,8 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <StackPanel>
-                            <TextBlock Text="Chats" FontSize="24"/>
-                            
-                            <Button Content="Logout"
-                                    Margin="10"
-                                    Padding="10 5 10 5"
-                                    HorizontalAlignment="Left"
-                                    Command="{Binding LogoutCommand}"/>
+                            <TextBlock Text="Chats" FontSize="24"
+                                       Margin="10"/>
                         </StackPanel>
                     </Border>
                 </ControlTemplate>

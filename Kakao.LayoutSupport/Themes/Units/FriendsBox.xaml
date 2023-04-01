@@ -4,7 +4,6 @@
                     xmlns:units="clr-namespace:Kakao.LayoutSupport.UI.Units">
 
     <Style TargetType="{x:Type units:FriendsBox}">
-        <Setter Property="Padding" Value="4"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:FriendsBox}">
@@ -14,7 +13,7 @@
                             Padding="{TemplateBinding Padding}">
                         <james:JamesGrid Rows="auto, auto" Columns="*, auto">
                             <TextBlock Text="{TemplateBinding Tag}"/>
-                            <CheckBox x:Name="expand" Content="Toggle"/>
+                            <units:ExpandButton x:Name="expand" Content="Toggle"/>
                             <ItemsPresenter x:Name="items" Grid.ColumnSpan="2"/>
                         </james:JamesGrid>
                     </Border>

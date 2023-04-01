@@ -16,7 +16,7 @@ using Prism.Regions;
 
 namespace Kakao.Main.Local.ViewModels
 {
-    public partial class MainContentViewModel : ObservableBase
+    public partial class MainContentViewModel : ObservableBase, IViewLoadable
     {
 
         private readonly IRegionManager _regionManager;
@@ -43,6 +43,11 @@ namespace Kakao.Main.Local.ViewModels
                 new MenuModel().DataGenerator(ContentNamesManger.Friends),
                 new MenuModel().DataGenerator(ContentNamesManger.More),
             };
+        }
+
+        public void OnLoaded(IViewable smartWindow)
+        {
+            Menu = Menus[0];
         }
         partial void OnMenuChanged(MenuModel? value)
         {

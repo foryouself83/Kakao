@@ -21,11 +21,17 @@
                                 <birth:BirthdayBoxItem/>
                             </birth:FriendsBirthBox>
                             
-                            <favorite:FavoriteBox Tag="Favorites">
-                                <favorite:FavoriteBoxItem>asdasdasd</favorite:FavoriteBoxItem>
-                                <favorite:FavoriteBoxItem>asdasdasd</favorite:FavoriteBoxItem>
-                                <favorite:FavoriteBoxItem>asdasdasd</favorite:FavoriteBoxItem>
+                            <favorite:FavoriteBox Tag="Favorites"
+                                                  DoubleClickCommand="{Binding DoubleClickCommand}"
+                                                  ItemsSource="{Binding Favorites}">
+                                
                             </favorite:FavoriteBox>
+                            
+                            <Button Content="Simulator"
+                                    Margin="10"
+                                    Padding="10 5 10 5"
+                                    HorizontalAlignment="Left"
+                                    Command="{Binding ShowSimulatorCommand}"/>
                             
                             <Button Content="Logout"
                                     Margin="10"

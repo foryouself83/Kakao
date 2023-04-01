@@ -6,7 +6,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <TextBlock Text="123123123"/>
+                    <TextBlock Text="{Binding Name}" Padding="10"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -23,7 +23,6 @@
                         
                         <RadioButton Style="{StaticResource RadioBirthDayItem}" GroupName="RadioFriends"
                                      IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},Path=IsSelected}">
-                            asdasdasd2222222222
                         </RadioButton>
                         
                     </Border>
